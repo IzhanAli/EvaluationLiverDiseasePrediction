@@ -1,0 +1,74 @@
+{% extends 'users/userbase.html'%}
+{%block contents%}
+<script>
+
+</script>
+<div class="slider slider-revolution revolution-slider  fullwidth">
+  <div class="shadowWrapper">
+<center><br><br><br><br>
+  <h3>Add Information to Test</h3>
+  <form action="{% url 'MLResult' %}" method="POST"  style="width:100%">
+    {% csrf_token %}
+  <table class="sm-table" cellspacing="5px" cellpadding="5%"; align="center">
+    <tr>
+        <th>Fields  </th>
+        <th>Input Values </th>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td><input type="number" name="age" min="18" max="85" required> </td>
+    </tr>
+
+    <tr>
+        <td>Gender</td>
+        <td><select name="sex" required>
+            <option>--Select--</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select> </td>
+    </tr>
+       <tr>
+        <td>Total Bilirubin</td>
+        <td><input type="number" name="Total_Bilirubin" min = "0" step="0.01" required> </td>
+    </tr>
+       <tr>
+        <td>Direct Bilirubin </td>
+        <td><input type="number" name=" Direct_Bilirubin " min = "0" step="0.01" required> </td>
+    </tr>
+       <tr>
+        <td>Alkaline Phosphotase</td>
+        <td><input type="number" name="Alkaline_Phosphotase" min="0" required> </td>
+    </tr>
+       <tr>
+        <td> Alamine Aminotransferase</td>
+        <td><input type="number" name=" Alamine_Aminotransferase" min="0" required> </td>
+    </tr>
+       <tr>
+        <td>Aspartate Aminotransferase</td>
+        <td><input type="number" name="Aspartate_Aminotransferase" min="0" required> </td>
+    </tr>
+       <tr>
+        <td>Total Protiens</td>
+        <td><input type="number" name="Total_Protiens" min="0" step="0.01" required> </td>
+    </tr>
+       <tr>
+        <td>Albumin</td>
+        <td><input type="number" name=" Albumin" min="0" step="0.01" required> </td>
+    </tr>
+       <tr>
+        <td>Albumin_and_Globulin_Ratio</td>
+        <td><input type="number" name="Albumin_and_Globulin_Ratio" step="0.01" min="0" required> </td>
+    </tr>
+      <tr>
+          <td><button type="submit" value="Register" class="sendmail alignright">Predict</button></td>
+     </tr>
+      <th>
+          <tr>{{ msg }}</tr>
+      </th>
+  </table>
+  </form>
+</center>
+      </div>
+  </div>
+
+{% endblock %}

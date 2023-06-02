@@ -1,0 +1,43 @@
+{% extends 'users/userbase.html'%}
+{% load static %}
+{%block contents%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<section id="intro">
+
+    <div class="intro-text">
+<!--        <div class="container" style="margin-top:-200px;">-->
+
+
+<center>
+    <p><h3 align="center" style="color:#5fcf80;"View Correlation Graph</h3></p>
+    <table>
+
+        <tr>
+            <td><img src="{%static 'output/classlabels.png'%}" alt="" class="img-fluid"/> </td>
+            <td><img src="{%static 'output/corr.png'%}" alt="" class="img-fluid"/> </td>
+        </tr>
+    </table>
+    </center>
+     <p><h3 align="center" style="color:#5fcf80;">View Dataset.....</h3></p>
+          {{data|safe}}
+
+    </div>
+  </section>
+{% endblock %}
